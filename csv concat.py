@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter import messagebox as msg
-import csv
 import pandas as pd
 from tkinter import filedialog
 class CSV_CONCATENATION():
