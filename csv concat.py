@@ -12,7 +12,7 @@ class CSV_CONCATENATION():
         self.menu = Menu(self.master)
         
         self.file_menu = Menu(self.menu,tearoff = 0)
-        self.file_menu.add_command(label="Exit",command = self.exitmenu)
+        self.file_menu.add_command(label="Exit",accelerator= 'Alt+F4',command = self.exitmenu)
         self.menu.add_cascade(label = "File",menu=self.file_menu)
         
         self.about_menu = Menu(self.menu,tearoff = 0)
