@@ -1,7 +1,8 @@
 from tkinter import *
 from tkinter import messagebox as msg
-import pandas as pd
 from tkinter import filedialog
+
+import pandas as pd
 
 class CSV_CONCATENATION():
     def __init__(self,master):
