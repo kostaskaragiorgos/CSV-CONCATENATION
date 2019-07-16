@@ -92,7 +92,7 @@ class CSV_CONCATENATION():
         filename = filedialog.askopenfilename(initialdir="/",title="Select csv file",
                                                    filetypes=(("csv files","*.csv"),("all files","*.*")))
         
-        if ".csv" in filename:
+        if filename.endswith('.csv'):
             pandascheck = pd.read_csv(filename)
             self.concatlist.append(pandascheck)
             if len(self.concatlist) == 1:
@@ -111,7 +111,7 @@ class CSV_CONCATENATION():
         if self.varnumset.get() == "Horizontal":
             concatdf = pd.concat(self.concatlist,axis=1)
             filenamesave =  filedialog.asksaveasfilename(initialdir = "/",title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
-            if ".csv" in filenamesave:
+            if filenamesave.endswith('.csv'):
                 msg.showinfo("SUCCESS","THE CSV FILE CREATED SUCCESSFULLY")
                 concatdf.to_csv(filenamesave,index = False)
                 self.concatlist.clear()
@@ -123,7 +123,7 @@ class CSV_CONCATENATION():
         else:
             concatdf2 = pd.concat(self.concatlist,axis = 0)
             filenamesave =  filedialog.asksaveasfilename(initialdir = "/",title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
-            if ".csv" in filenamesave:
+            if filenamesave.endswith('.csv'):
                 msg.showinfo("SUCCESS","THE CSV FILE CREATED SUCCESSFULLY")
                 concatdf2.to_csv(filenamesave,index = False)
                 self.concatlist.clear()
