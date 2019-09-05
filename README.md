@@ -13,3 +13,7 @@
   <li> SELECT IF YOUR CSV FILES ARE GOING TO BE MERGED HORIZONTALLY OR VERTICALLY </li>
   <li> PRESS THE CONCATENATION BUTTON AND SAVE YOUR NEW CONCATANATED FILE </li>
 </ul>
+
+**Current Version**
+
+<p><img src ="csv concat.png" title = "Csv File Concatenation Version"/> </p>
