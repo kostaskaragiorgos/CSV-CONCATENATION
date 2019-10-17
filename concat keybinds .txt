@@ -1,5 +1,6 @@
 File menu
 ===================
+Add for concatenation Ctrl + O
 Save File Ctrl + S
 Show List Ctrl + F5
 Exit Alt + F4
