@@ -1,10 +1,10 @@
 File menu
-===================
+==============================
 Add for concatenation Ctrl + O
 Save File Ctrl + S
 Show List Ctrl + F5
 Exit Alt + F4
-===================
+==============================
 Edit menu
 ===========================
 Delete last insert Ctrl + Z
