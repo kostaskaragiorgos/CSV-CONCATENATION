@@ -17,3 +17,16 @@
 **Current Version**
 
 <p><img src ="csv concat.png" title = "Csv File Concatenation Version"/> </p>
+
+## Keybinds
+
+<ul>
+ <li> Add for concatenation (Ctrl + O) </li>
+ <li> Save File (Ctrl + S) </li>
+ <li> Show List (Ctrl + F5) </li>
+ <li> Exit (Alt + F4) </li>
+ <li> Delete last insert (Ctrl + Z) </li>
+ <li> Clear list (Ctrl + T) </li>
+ <li> About (Ctrl + I) </li>
+ <li> Help (Ctrl + F1) </li>
+ </ul>
