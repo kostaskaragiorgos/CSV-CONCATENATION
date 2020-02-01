@@ -13,6 +13,7 @@ class CSV_CONCATENATION():
         self.master.resizable(False,False)
         self.menu = Menu(self.master)
         
+        # menu 
         self.file_menu = Menu(self.menu,tearoff = 0)
         self.file_menu.add_command(label = "Add for concatenation",accelerator = 'Ctrl+O',command =self.addtolist)
         self.file_menu.add_command(label="Save File",accelerator= 'Ctrl+S',command = self.savefile)
@@ -33,6 +34,7 @@ class CSV_CONCATENATION():
         self.help_menu.add_command(label = "Help",accelerator = 'Ctrl+F1',command=self.helpmenu)
         self.menu.add_cascade(label="Help",menu=self.help_menu)
         
+        #keybinds
         self.master.config(menu=self.menu)
         
         self.master.bind('<Control-o>',lambda event:self.addtolist())
@@ -69,12 +71,14 @@ class CSV_CONCATENATION():
             self.concatanationb.configure(state = "disable")
     
     def showlista(self):
+        """ shows the list of files """
         if self.concatlist == []:
             msg.showinfo("LIST","LIST IS EMPTY")
         else:
             msg.showinfo("LIST",self.concatlist)
     
     def clearl(self):
+        """ clears the list """
         self.concatlist.clear()
         self.concatanationb.configure(state = "disable")
         msg.showinfo("LIST CLEARED","THE CONCATANATION LIST IS CLEAR\n"
@@ -93,6 +97,8 @@ class CSV_CONCATENATION():
     
         
     def addtolist(self):
+        """ adds file to list """
+
         filename = filedialog.askopenfilename(initialdir="/",title="Select csv file",
                                                    filetypes=(("csv files","*.csv"),("all files","*.*")))
         
@@ -114,6 +120,7 @@ class CSV_CONCATENATION():
             self.concatanationb.configure(state="active")
             
     def concatanation(self):
+        """ concatanation function """ 
         if self.varnumset.get() == "Horizontal":
             concatdf = pd.concat(self.concatlist,axis=1)
             filenamesave =  filedialog.asksaveasfilename(initialdir = "/",title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
@@ -140,6 +147,7 @@ class CSV_CONCATENATION():
                 msg.showerror("ERROR","NO FILE SAVED")
                 
     def savefile(self):
+        """ saves the new file """
         if len(self.concatlist) >= 2:
             self.concatanation()
         else:
