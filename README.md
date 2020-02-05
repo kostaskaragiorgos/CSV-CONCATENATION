@@ -12,6 +12,8 @@
 
 <ul>
  <li> concat.py(the main file) </li>
+ <li> csv concat.png(version file) </li>
+ <li> concat keybinds.txt(keybinds file) </li>
 </ul>
 
 **HOW TO USE**
