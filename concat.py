@@ -99,7 +99,7 @@ class CSV_CONCATENATION():
             if len(self.concatlist) == 1:
                 self.columnsofthefirst = pandascheck.columns
                 msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
-            if (len(self.concatlist) > 1):
+            elif (len(self.concatlist) > 1):
                 if str(pandascheck.columns) == str(self.columnsofthefirst):
                     msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
                 else:
