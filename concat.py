@@ -8,7 +8,7 @@ import pandas as pd
 class CSV_CONCATENATION():
     """ csv concatenation class"""
     def __init__(self, master):
-        self.concatlist =[]
+        self.concatlist = []
         self.master = master
         self.master.title("CSV CONCATENATION")
         self.master.geometry("250x120")
@@ -28,7 +28,7 @@ class CSV_CONCATENATION():
         self.about_menu = Menu(self.menu, tearoff=0)
         self.about_menu.add_command(label="About", accelerator='Ctrl+I', command=self.aboutmenu)
         self.menu.add_cascade(label="About", menu=self.about_menu)
-        self.help_menu = Menu(self.menu, tearoff = 0)
+        self.help_menu = Menu(self.menu, tearoff=0)
         self.help_menu.add_command(label="Help", accelerator='Ctrl+F1', command=self.helpmenu)
         self.menu.add_cascade(label="Help", menu=self.help_menu)
         #keybinds
@@ -44,8 +44,7 @@ class CSV_CONCATENATION():
         self.welcomleb = Label(self.master,
                                text="Welcome to the csv concatenation\n")
         self.welcomleb.pack()
-        self.addtoconcatlist = Button(self.master, text = "ADD FOR CONCATENATION"
-                                      ,command = self.addtolist)
+        self.addtoconcatlist = Button(self.master, text="ADD FOR CONCATENATION",command=self.addtolist)
         self.addtoconcatlist.pack()
         setslist = list(["Horizontal", "Vertical"])
         self.varnumset = StringVar(master)
@@ -63,7 +62,7 @@ class CSV_CONCATENATION():
             self.concatlist.pop()
             msg.showinfo("Delete", "Success The last element of the list has been deleted ")
         if len(self.concatlist) < 2:
-            self.concatanationb.configure(state = "disable")
+            self.concatanationb.configure(state="disable")
     
     def showlista(self):
         """ shows the list of files """
@@ -113,12 +112,12 @@ class CSV_CONCATENATION():
         """ concatanation function """ 
         if self.varnumset.get() == "Horizontal":
             concatdf = pd.concat(self.concatlist, axis=1)
-            filenamesave =  filedialog.asksaveasfilename(initialdir = "/", title = "Select file", filetypes = (("csv files", "*.csv"), ("all files", "*.*")))
+            filenamesave =  filedialog.asksaveasfilename(initialdir="/", title="Select file", filetypes=(("csv files", "*.csv"), ("all files", "*.*")))
             if '.csv' in filenamesave:
                 msg.showinfo("SUCCESS", "THE CSV FILE CREATED SUCCESSFULLY")
-                concatdf.to_csv(filenamesave, index = False)
+                concatdf.to_csv(filenamesave, index=False)
                 self.concatlist.clear()
-                self.concatanationb.configure(state = "disable")
+                self.concatanationb.configure(state="disable")
                 msg.showinfo("LIST CLEARED", "THE CONCATANATION LIST IS CLEAR\n"
                              +"YOU CAN CONCATANATE NEW FILES")
             else:
@@ -128,9 +127,9 @@ class CSV_CONCATENATION():
             filenamesave =  filedialog.asksaveasfilename(initialdir = "/", title = "Select file", filetypes = (("csv files", "*.csv"), ("all files", "*.*")))
             if '.csv' in filenamesave:
                 msg.showinfo("SUCCESS", "THE CSV FILE CREATED SUCCESSFULLY")
-                concatdf2.to_csv(filenamesave, index = False)
+                concatdf2.to_csv(filenamesave, index=False)
                 self.concatlist.clear()
-                self.concatanationb.configure(state = "disable")
+                self.concatanationb.configure(state="disable")
                 msg.showinfo("LIST CLEARED", "THE CONCATANATION LIST IS CLEAR\n"
                              +"YOU CAN CONCATANATE NEW FILES")
             else:
