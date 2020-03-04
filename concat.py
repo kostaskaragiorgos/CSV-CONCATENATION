@@ -51,7 +51,8 @@ class CSV_CONCATENATION():
         self.welcomleb = Label(self.master,
                                text="Welcome to the csv concatenation\n")
         self.welcomleb.pack()
-        self.addtoconcatlist = Button(self.master, text="ADD FOR CONCATENATION", command=self.addtolist)
+        self.addtoconcatlist = Button(self.master, text="ADD FOR CONCATENATION",
+                                      command=self.addtolist)
         self.addtoconcatlist.pack()
         setslist = list(["Horizontal", "Vertical"])
         self.varnumset = StringVar(master)
