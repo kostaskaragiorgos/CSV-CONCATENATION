@@ -29,7 +29,7 @@ class CSV_CONCATENATION():
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
         self.Edit_menu = Menu(self.menu, tearoff=0)
-        self.Edit_menu.add_command(label = "Delete first insert", accelerator = 'Ctrl+F', command=self.delfirst)
+        self.Edit_menu.add_command(label="Delete first insert", accelerator='Ctrl+F', command=self.delfirst)
         self.Edit_menu.add_command(label="Delete last insert", accelerator='Ctrl+Z', command=self.dellast)
         self.Edit_menu.add_command(label="Clear list", accelerator='Ctrl+T', command=self.clearl)
         self.menu.add_cascade(label="Edit", menu=self.Edit_menu)
@@ -41,6 +41,7 @@ class CSV_CONCATENATION():
         self.menu.add_cascade(label="Help", menu=self.help_menu)
         #keybinds
         self.master.config(menu=self.menu)
+        self.master.bind('<Control-f>', lambda event: self.delfirst())
         self.master.bind('<Control-o>', lambda event: self.addtolist())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
         self.master.bind('<Control-z>', lambda event: self.dellast())
