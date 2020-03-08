@@ -74,7 +74,7 @@ class CSV_CONCATENATION():
             self.concatanationb.configure(state="disable")
     def dellast(self):
         """ deletes last element of the list """
-        if self.concatlist == []:
+        if not self.concatlist:
             msg.showerror("Error", "The list is empty")
         else:
             self.concatlist.pop()
@@ -83,7 +83,7 @@ class CSV_CONCATENATION():
             self.concatanationb.configure(state="disable")
     def showlista(self):
         """ shows the list of files """
-        if self.concatlist == []:
+        if not self.concatlist:
             msg.showinfo("LIST", "LIST IS EMPTY")
         else:
             msg.showinfo("LIST", self.concatlist)
