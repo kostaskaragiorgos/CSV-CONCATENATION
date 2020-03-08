@@ -25,14 +25,17 @@ class CsvConcatenation():
         self.menu = Menu(self.master)
         # menu 
         self.file_menu = Menu(self.menu, tearoff=0)
-        self.file_menu.add_command(label="Add for concatenation", accelerator='Ctrl+O', command=self.addtolist)
+        self.file_menu.add_command(label="Add for concatenation",
+                                   accelerator='Ctrl+O', command=self.addtolist)
         self.file_menu.add_command(label="Save File", accelerator='Ctrl+S', command=self.savefile)
         self.file_menu.add_command(label="Show List", accelerator='Ctrl+F5', command=self.showlista)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
         self.edit_menu = Menu(self.menu, tearoff=0)
-        self.edit_menu.add_command(label="Delete first insert", accelerator='Ctrl+F', command=self.delfirst)
-        self.edit_menu.add_command(label="Delete last insert", accelerator='Ctrl+Z', command=self.dellast)
+        self.edit_menu.add_command(label="Delete first insert",
+                                   accelerator='Ctrl+F', command=self.delfirst)
+        self.edit_menu.add_command(label="Delete last insert",
+                                   accelerator='Ctrl+Z', command=self.dellast)
         self.edit_menu.add_command(label="Clear list", accelerator='Ctrl+T', command=self.clearl)
         self.menu.add_cascade(label="Edit", menu=self.edit_menu)
         self.about_menu = Menu(self.menu, tearoff=0)
@@ -103,7 +106,8 @@ class CsvConcatenation():
     def addtolist(self):
         """ adds file to list """
         filename = filedialog.askopenfilename(initialdir="/", title="Select csv file",
-                                              filetypes=(("csv files", "*.csv"), ("all files", "*.*")))
+                                              filetypes=(("csv files", "*.csv"),
+                                                         ("all files", "*.*")))
         if ".csv" in filename:
             pandascheck = pd.read_csv(filename)
             self.concatlist.append(pandascheck)
@@ -116,14 +120,17 @@ class CsvConcatenation():
                     msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
                 else:
                     self.concatlist.pop()
-                    msg.showerror("ERROR", "THE CSV FILE MUST HAVE THE SAME COLUMN NAME AS THE FIRST INSERTED FILE")
+                    msg.showerror("ERROR", "THE CSV FILE MUST HAVE"+
+                                  "THE SAME COLUMN NAME AS THE FIRST INSERTED FILE")
         else: 
             msg.showerror("Error", "NO CSV FILE ADDED")      
     def concatanation(self):
         """ concatanation function """ 
         if self.varnumset.get() == "Horizontal":
             concatdf = pd.concat(self.concatlist, axis=1)
-            filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file", filetypes=(("csv files", "*.csv"), ("all files", "*.*")))
+            filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
+                                                        filetypes=(("csv files", "*.csv"),
+                                                                   ("all files", "*.*")))
             if '.csv' in filenamesave:
                 msg.showinfo("SUCCESS", "THE CSV FILE CREATED SUCCESSFULLY")
                 concatdf.to_csv(filenamesave, index=False)
@@ -135,7 +142,9 @@ class CsvConcatenation():
                 msg.showerror("ERROR", "NO FILE SAVED")
         else:
             concatdf2 = pd.concat(self.concatlist, axis=0)
-            filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file", filetypes=(("csv files", "*.csv"), ("all files", "*.*")))
+            filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
+                                                        filetypes=(("csv files", "*.csv"),
+                                                                   ("all files", "*.*")))
             if '.csv' in filenamesave:
                 msg.showinfo("SUCCESS", "THE CSV FILE CREATED SUCCESSFULLY")
                 concatdf2.to_csv(filenamesave, index=False)
