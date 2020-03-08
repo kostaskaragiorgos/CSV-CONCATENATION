@@ -29,6 +29,7 @@ class CSV_CONCATENATION():
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
         self.Edit_menu = Menu(self.menu, tearoff=0)
+        self.Edit_menu.add_command(label = "Delete first insert", accelerator = 'Ctrl+F', command=self.delfirst)
         self.Edit_menu.add_command(label="Delete last insert", accelerator='Ctrl+Z', command=self.dellast)
         self.Edit_menu.add_command(label="Clear list", accelerator='Ctrl+T', command=self.clearl)
         self.menu.add_cascade(label="Edit", menu=self.Edit_menu)
@@ -62,6 +63,14 @@ class CSV_CONCATENATION():
         self.concatanationb = Button(self.master, text="CONCATENATION", state="disable",
                                      command=self.concatanation)
         self.concatanationb.pack()
+    def delfirst(self):
+        if not self.concatlist:
+            msg.showerror("Error", "The list is empty")
+        else:
+            self.concatlist.pop(0)
+            msg.showinfo("Delete", "Success The last element of the list has been deleted ")
+        if len(self.concatlist) < 2:
+            self.concatanationb.configure(state="disable")
     def dellast(self):
         """ deletes last element of the list """
         if self.concatlist == []:
