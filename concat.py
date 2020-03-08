@@ -10,8 +10,10 @@ def aboutmenu():
     msg.showinfo("About", "About CSV CONCATENATION \nVersion 2.0\n")
 def helpmenu():
     """ help menu """
-    msg.showinfo("Help", "      HELP CSV CONCATENATION\n1.PRESS THE BUTTON ADD FOR CONCATENATION TO ADD THE FILES FOR CONCATENATION\n"+
-                 "2.CHOOSE VERTICAL OR HORIZONTAL\n3.PRESS THE CONCATENATION BUTTON TO SAVE THE NEW CSV FILE")
+    msg.showinfo("Help", "HELP CSV CONCATENATION\n1."+
+                 "PRESS THE BUTTON ADD FOR CONCATENATION TO ADD THE FILES FOR CONCATENATION\n"+
+                 "2.CHOOSE VERTICAL OR HORIZONTAL\n3."+
+                 "PRESS THE CONCATENATION BUTTON TO SAVE THE NEW CSV FILE")
 class CsvConcatenation():
     """ csv concatenation class"""
     def __init__(self, master):
