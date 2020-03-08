@@ -12,7 +12,7 @@ def helpmenu():
     """ help menu """
     msg.showinfo("Help", "      HELP CSV CONCATENATION\n1.PRESS THE BUTTON ADD FOR CONCATENATION TO ADD THE FILES FOR CONCATENATION\n"+
                  "2.CHOOSE VERTICAL OR HORIZONTAL\n3.PRESS THE CONCATENATION BUTTON TO SAVE THE NEW CSV FILE")
-class CSV_CONCATENATION():
+class CsvConcatenation():
     """ csv concatenation class"""
     def __init__(self, master):
         self.concatlist = []
@@ -28,11 +28,11 @@ class CSV_CONCATENATION():
         self.file_menu.add_command(label="Show List", accelerator='Ctrl+F5', command=self.showlista)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
-        self.Edit_menu = Menu(self.menu, tearoff=0)
-        self.Edit_menu.add_command(label="Delete first insert", accelerator='Ctrl+F', command=self.delfirst)
-        self.Edit_menu.add_command(label="Delete last insert", accelerator='Ctrl+Z', command=self.dellast)
-        self.Edit_menu.add_command(label="Clear list", accelerator='Ctrl+T', command=self.clearl)
-        self.menu.add_cascade(label="Edit", menu=self.Edit_menu)
+        self.edit_menu = Menu(self.menu, tearoff=0)
+        self.edit_menu.add_command(label="Delete first insert", accelerator='Ctrl+F', command=self.delfirst)
+        self.edit_menu.add_command(label="Delete last insert", accelerator='Ctrl+Z', command=self.dellast)
+        self.edit_menu.add_command(label="Clear list", accelerator='Ctrl+T', command=self.clearl)
+        self.menu.add_cascade(label="Edit", menu=self.edit_menu)
         self.about_menu = Menu(self.menu, tearoff=0)
         self.about_menu.add_command(label="About", accelerator='Ctrl+I', command=aboutmenu)
         self.menu.add_cascade(label="About", menu=self.about_menu)
@@ -65,6 +65,7 @@ class CSV_CONCATENATION():
                                      command=self.concatanation)
         self.concatanationb.pack()
     def delfirst(self):
+        """ deletes the first element of the list """
         if not self.concatlist:
             msg.showerror("Error", "The list is empty")
         else:
@@ -107,7 +108,7 @@ class CSV_CONCATENATION():
             if len(self.concatlist) == 1:
                 self.columnsofthefirst = pandascheck.columns
                 msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
-            elif (len(self.concatlist) > 1):
+            else:
                 self.concatanationb.configure(state="active")
                 if str(pandascheck.columns) == str(self.columnsofthefirst):
                     msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
@@ -151,7 +152,7 @@ class CSV_CONCATENATION():
 def main():
     """ main function """
     root = Tk()
-    CSV_CONCATENATION(root)
+    CsvConcatenation(root)
     root.mainloop()
 if __name__ == '__main__':
     main()
