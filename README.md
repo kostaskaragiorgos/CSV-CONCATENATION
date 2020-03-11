@@ -12,6 +12,7 @@
   * [FILES](#FILES)
   * [HOW TO USE](#HOW_TO_USE)
   * [Current Version](#Current_Version)
+  * [Radon](#Radon)
   * [Keybinds](#Keybinds)
   * [License](#License)
 <!--ts-->
@@ -34,18 +35,18 @@
  <li> concat keybinds.txt(keybinds file) </li>
 </ul>
 
-**HOW TO USE**
+## HOW_TO_USE
 <ul>
   <li> INSERT .CSV FILES </li>
   <li> SELECT IF YOUR CSV FILES ARE GOING TO BE MERGED HORIZONTALLY OR VERTICALLY </li>
   <li> PRESS THE CONCATENATION BUTTON AND SAVE YOUR NEW CONCATANATED FILE </li>
 </ul>
 
-**Current Version**
+## Current_Version
 
 <p><img src ="csv concat.png" title = "Csv File Concatenation Version"/> </p>
 
-**Radon**
+## Radon
 <p><img src = "csv concat radon cc.png" title = "Csv file concatenation radon cc"/> </p>
 <p><img src = "csv concat radon hal.png" title = "Csv file concatenation radon hal"/> </p>
 <p><img src = "csv concat radon mi.png" title = "Csv file concatenation radon mi"/> </p>
