@@ -1,9 +1,20 @@
 # CSV-CONCATENATION
+## MERGING MULTIPLE .CSV FILES
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
+# Table of contents
 
-## MERGING MULTIPLE .CSV FILES
+<!--ts-->
+  * [CSV-CONCATENATION](#CSV-CONCATENATION)
+  * [Table of contents](#Table_of_contents)
+  * [Dependencies](#Dependencies)
+  * [FILES](#FILES)
+  * [HOW TO USE](#HOW_TO_USE)
+  * [Current Version](#Current_Version)
+  * [Keybinds](#Keybinds)
+  * [License](#License)
+<!--ts-->
 
 
 ## Dependencies
