@@ -27,7 +27,7 @@ class CsvConcatenation():
         self.file_menu = Menu(self.menu, tearoff=0)
         self.file_menu.add_command(label="Add for concatenation",
                                    accelerator='Ctrl+O', command=self.addtolist)
-        self.file_menu.add_command(label="Save File", accelerator='Ctrl+S', command=self.savefile)
+        self.file_menu.add_command(label="Concatenation", accelerator='Ctrl+S', command=self.savefile)
         self.file_menu.add_command(label="Show List", accelerator='Ctrl+F5', command=self.showlista)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
