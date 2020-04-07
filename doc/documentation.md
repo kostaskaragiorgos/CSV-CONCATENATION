@@ -4,9 +4,33 @@
 
 ## Add for concatenation
 
+You can insert a .csv file using menu File --> Insert a csv or using Ctrl+O keybind
+
+<p><img src = "doc images/file menu/add for concatenation.png" title = "Insert a csv file"/></p>
+
+if you cancel insertion an informative message pops up
+
+<p><img src = "doc images/file menu/no csv added.png" title = "Insert file cancelation"/> </p>
+
+else
+
+<p><img src = "doc images/file menu/csv added.png" title="Successful Insertion"/> </p>
+
 ## Concatenation
 
 ## Show List
+
+You can show the list of files using menu File --> Show List or using Ctrl + F5 keybind
+
+<p><img src = "doc images/file menu/show list.png" title="Show list">
+
+if the list is empty an informative  message pops up
+
+<p><img src ="doc images/file menu/empty list.png" title="empty list"/> </p>
+
+else 
+
+<p><img src ="doc images/file menu/list.png" title="List"/> </p>
 
 ## Exit
 
