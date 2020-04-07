@@ -75,7 +75,7 @@ class CsvConcatenation():
             msg.showerror("Error", "The list is empty")
         else:
             self.concatlist.pop(0)
-            msg.showinfo("Delete", "Success The last element of the list has been deleted ")
+            msg.showinfo("Delete", "Success The first element of the list has been deleted ")
         if len(self.concatlist) < 2:
             self.concatanationb.configure(state="disable")
     def dellast(self):
