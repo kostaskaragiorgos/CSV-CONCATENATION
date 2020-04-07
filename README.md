@@ -9,8 +9,7 @@
   * [CSV-CONCATENATION](#CSV-CONCATENATION)
   * [Table of contents](#Table_of_contents)
   * [Dependencies](#Dependencies)
-  * [FILES](#FILES)
-  * [HOW TO USE](#HOW_TO_USE)
+  * [Files/Folders](#Files/Folders)
   * [Current Version](#Current_Version)
   * [Radon](#Radon)
   * [Keybinds](#Keybinds)
@@ -30,21 +29,20 @@
 ## FILES 
 
 <ul>
+ <li> ./doc (documentation folder) </li>
+ <li> ./images (images folder) </li>
  <li> concat.py(the main file) </li>
- <li> csv concat.png(version file) </li>
  <li> concat keybinds.txt(keybinds file) </li>
-</ul>
-
-## HOW_TO_USE
-<ul>
-  <li> INSERT .CSV FILES </li>
-  <li> SELECT IF YOUR CSV FILES ARE GOING TO BE MERGED HORIZONTALLY OR VERTICALLY </li>
-  <li> PRESS THE CONCATENATION BUTTON AND SAVE YOUR NEW CONCATANATED FILE </li>
 </ul>
 
 ## Current_Version
 
 <p><img src ="images/csv concat.png" title = "Csv File Concatenation Version"/> </p>
+
+
+## Documentation
+
+All project documentation is located in the `./doc`  folder.
 
 ## Radon
 <p><img src = "images/csv concat radon cc.png" title = "Csv file concatenation radon cc"/> </p>
@@ -63,7 +61,7 @@
  <li> Clear list (Ctrl + T) </li>
  <li> About (Ctrl + I) </li>
  <li> Help (Ctrl + F1) </li>
- </ul>
+</ul>
 
 
 
