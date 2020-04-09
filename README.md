@@ -26,7 +26,7 @@
   <li> second way to install radon (pip install radon) </li>
 </ul>
 
-## FILES 
+## Files/Folders
 
 <ul>
  <li> ./doc (documentation folder) </li>
