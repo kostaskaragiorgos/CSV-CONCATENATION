@@ -11,7 +11,12 @@
   * [Dependencies](#Dependencies)
   * [Files/Folders](#Files/Folders)
   * [Current Version](#Current_Version)
+  * [Documentation](#Documentation)
   * [Radon](#Radon)
+    * [Radon cc](#Radon_cc)
+    * [Radon hal](#Radon_hal)
+    * [Radon mi](#Radon_mi)
+    * [Radon raw](#Radon_raw)
   * [Keybinds](#Keybinds)
   * [License](#License)
 <!--ts-->
@@ -19,7 +24,7 @@
 
 ## Dependencies
 
- <ul>
+<ul>
   <li> pandas (conda install -c anaconda pandas) </li>
   <li> second way to install pandas (pip install pandas) </li>
   <li> radon (conda install -c conda-forge radon) </li>
@@ -45,9 +50,21 @@
 All project documentation is located in the `./doc`  folder.
 
 ## Radon
+
+### Radon_cc
+
 <p><img src = "images/csv concat radon cc.png" title = "Csv file concatenation radon cc"/> </p>
+
+### Radon_hal
+
 <p><img src = "images/csv concat radon hal.png" title = "Csv file concatenation radon hal"/> </p>
+
+### Radon_mi
+
 <p><img src = "images/csv concat radon mi.png" title = "Csv file concatenation radon mi"/> </p>
+
+### Radon_raw
+
 <p><img src = "images/csv concat radon raw.png" title = "Csv file concatenation radon raw"/> </p>
 
 ## Keybinds
