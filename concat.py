@@ -27,7 +27,8 @@ class CsvConcatenation():
         self.file_menu = Menu(self.menu, tearoff=0)
         self.file_menu.add_command(label="Add for concatenation",
                                    accelerator='Ctrl+O', command=self.addtolist)
-        self.file_menu.add_command(label="Concatenation", accelerator='Ctrl+S', command=self.savefile)
+        self.file_menu.add_command(label="Concatenation",
+                                   accelerator='Ctrl+S', command=self.savefile)
         self.file_menu.add_command(label="Show List", accelerator='Ctrl+F5', command=self.showlista)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
@@ -107,15 +108,15 @@ class CsvConcatenation():
         """ concatanation button"""
         concatdf = pd.concat(self.concatlist, axis=axis)
         filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
-                                                            filetypes=(("csv files", "*.csv"),
-                                                                    ("all files", "*.*")))
+                                                    filetypes=(("csv files", "*.csv"),
+                                                               ("all files", "*.*")))
         if '.csv' in filenamesave:
             msg.showinfo("SUCCESS", "THE CSV FILE CREATED SUCCESSFULLY")
             concatdf.to_csv(filenamesave, index=False)
             self.concatlist.clear()
             self.concatanationb.configure(state="disable")
             msg.showinfo("LIST CLEARED", "THE CONCATANATION LIST IS CLEAR\n"
-                                +"YOU CAN CONCATANATE NEW FILES")
+                         +"YOU CAN CONCATANATE NEW FILES")
         else:
             msg.showerror("ERROR", "NO FILE SAVED")
     def addtolist(self):
