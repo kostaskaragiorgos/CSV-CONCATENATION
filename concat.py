@@ -103,6 +103,20 @@ class CsvConcatenation():
         """ exit menu function"""
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
+    def concat(self, axis):
+        concatdf = pd.concat(self.concatlist, axis=axis)
+        filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
+                                                            filetypes=(("csv files", "*.csv"),
+                                                                    ("all files", "*.*")))
+        if '.csv' in filenamesave:
+            msg.showinfo("SUCCESS", "THE CSV FILE CREATED SUCCESSFULLY")
+            concatdf.to_csv(filenamesave, index=False)
+            self.concatlist.clear()
+            self.concatanationb.configure(state="disable")
+            msg.showinfo("LIST CLEARED", "THE CONCATANATION LIST IS CLEAR\n"
+                                +"YOU CAN CONCATANATE NEW FILES")
+        else:
+            msg.showerror("ERROR", "NO FILE SAVED")
     def addtolist(self):
         """ adds file to list """
         filename = filedialog.askopenfilename(initialdir="/", title="Select csv file",
@@ -127,33 +141,9 @@ class CsvConcatenation():
     def concatanation(self):
         """ concatanation function """ 
         if self.varnumset.get() == "Horizontal":
-            concatdf = pd.concat(self.concatlist, axis=1)
-            filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
-                                                        filetypes=(("csv files", "*.csv"),
-                                                                   ("all files", "*.*")))
-            if '.csv' in filenamesave:
-                msg.showinfo("SUCCESS", "THE CSV FILE CREATED SUCCESSFULLY")
-                concatdf.to_csv(filenamesave, index=False)
-                self.concatlist.clear()
-                self.concatanationb.configure(state="disable")
-                msg.showinfo("LIST CLEARED", "THE CONCATANATION LIST IS CLEAR\n"
-                             +"YOU CAN CONCATANATE NEW FILES")
-            else:
-                msg.showerror("ERROR", "NO FILE SAVED")
+            self.concat(axis=1)
         else:
-            concatdf2 = pd.concat(self.concatlist, axis=0)
-            filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
-                                                        filetypes=(("csv files", "*.csv"),
-                                                                   ("all files", "*.*")))
-            if '.csv' in filenamesave:
-                msg.showinfo("SUCCESS", "THE CSV FILE CREATED SUCCESSFULLY")
-                concatdf2.to_csv(filenamesave, index=False)
-                self.concatlist.clear()
-                self.concatanationb.configure(state="disable")
-                msg.showinfo("LIST CLEARED", "THE CONCATANATION LIST IS CLEAR\n"
-                             +"YOU CAN CONCATANATE NEW FILES")
-            else:
-                msg.showerror("ERROR", "NO FILE SAVED")
+            self.concat(axis=0)
     def savefile(self):
         """ saves the new file """
         if len(self.concatlist) >= 2:
