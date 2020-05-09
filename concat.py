@@ -104,6 +104,7 @@ class CsvConcatenation():
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
     def concat(self, axis):
+        """ concatanation button"""
         concatdf = pd.concat(self.concatlist, axis=axis)
         filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
                                                             filetypes=(("csv files", "*.csv"),
@@ -139,7 +140,7 @@ class CsvConcatenation():
         else: 
             msg.showerror("Error", "NO CSV FILE ADDED")      
     def concatanation(self):
-        """ concatanation function """ 
+        """ concatanation button function """ 
         if self.varnumset.get() == "Horizontal":
             self.concat(axis=1)
         else:
