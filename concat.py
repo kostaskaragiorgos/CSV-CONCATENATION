@@ -120,6 +120,7 @@ class CsvConcatenation():
         else:
             msg.showerror("ERROR", "NO FILE SAVED")
     def checkcolumns(self, pandascheck):
+        """ check if column names are the same """
         if str(pandascheck.columns) == str(self.columnsofthefirst):
             msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
         else:
@@ -127,6 +128,7 @@ class CsvConcatenation():
             msg.showerror("ERROR", "THE CSV FILE MUST HAVE"+
                             "THE SAME COLUMN NAME AS THE FIRST INSERTED FILE")
     def checkinsertion(self, pandascheck):
+        """ checks if the name of the columns of the added csv are the same with the first added"""
         if len(self.concatlist) == 1:
             self.columnsofthefirst = pandascheck.columns
             msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
@@ -134,6 +136,7 @@ class CsvConcatenation():
             self.checkcolumns(pandascheck)
             self.concatanationb.configure(state="active")
     def addtolistval(self, filename):
+        """checks if inserted file is a .csv"""
         if ".csv" in filename:
             pandascheck = pd.read_csv(filename)
             self.concatlist.append(pandascheck)
