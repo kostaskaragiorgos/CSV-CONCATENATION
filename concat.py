@@ -119,27 +119,34 @@ class CsvConcatenation():
                          +"YOU CAN CONCATANATE NEW FILES")
         else:
             msg.showerror("ERROR", "NO FILE SAVED")
+    def checkcolumns(self, pandascheck):
+        if str(pandascheck.columns) == str(self.columnsofthefirst):
+            msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
+        else:
+            self.concatlist.pop()
+            msg.showerror("ERROR", "THE CSV FILE MUST HAVE"+
+                            "THE SAME COLUMN NAME AS THE FIRST INSERTED FILE")
+    def checkinsertion(self, pandascheck):
+        if len(self.concatlist) == 1:
+            self.columnsofthefirst = pandascheck.columns
+            msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
+        else:
+            self.checkcolumns(pandascheck)
+            self.concatanationb.configure(state="active")
+    def addtolistval(self, filename):
+        if ".csv" in filename:
+            pandascheck = pd.read_csv(filename)
+            self.concatlist.append(pandascheck)
+            self.checkinsertion(pandascheck)
+        else: 
+            msg.showerror("Error", "NO CSV FILE ADDED")  
     def addtolist(self):
         """ adds file to list """
         filename = filedialog.askopenfilename(initialdir="/", title="Select csv file",
                                               filetypes=(("csv files", "*.csv"),
                                                          ("all files", "*.*")))
-        if ".csv" in filename:
-            pandascheck = pd.read_csv(filename)
-            self.concatlist.append(pandascheck)
-            if len(self.concatlist) == 1:
-                self.columnsofthefirst = pandascheck.columns
-                msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
-            else:
-                self.concatanationb.configure(state="active")
-                if str(pandascheck.columns) == str(self.columnsofthefirst):
-                    msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
-                else:
-                    self.concatlist.pop()
-                    msg.showerror("ERROR", "THE CSV FILE MUST HAVE"+
-                                  "THE SAME COLUMN NAME AS THE FIRST INSERTED FILE")
-        else: 
-            msg.showerror("Error", "NO CSV FILE ADDED")      
+        self.addtolistval(filename)
+                                                        
     def concatanation(self):
         """ concatanation button function """ 
         if self.varnumset.get() == "Horizontal":
