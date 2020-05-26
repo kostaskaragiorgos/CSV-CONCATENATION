@@ -23,7 +23,7 @@ class CsvConcatenation():
         self.master.geometry("250x120")
         self.master.resizable(False, False)
         self.menu = Menu(self.master)
-        # menu 
+        # menu
         self.file_menu = Menu(self.menu, tearoff=0)
         self.file_menu.add_command(label="Add for concatenation",
                                    accelerator='Ctrl+O', command=self.addtolist)
@@ -126,7 +126,7 @@ class CsvConcatenation():
         else:
             self.concatlist.pop()
             msg.showerror("ERROR", "THE CSV FILE MUST HAVE"+
-                            "THE SAME COLUMN NAME AS THE FIRST INSERTED FILE")
+                          "THE SAME COLUMN NAME AS THE FIRST INSERTED FILE")
     def checkinsertion(self, pandascheck):
         """ checks if the name of the columns of the added csv are the same with the first added"""
         if len(self.concatlist) == 1:
@@ -141,17 +141,16 @@ class CsvConcatenation():
             pandascheck = pd.read_csv(filename)
             self.concatlist.append(pandascheck)
             self.checkinsertion(pandascheck)
-        else: 
-            msg.showerror("Error", "NO CSV FILE ADDED")  
+        else:
+            msg.showerror("Error", "NO CSV FILE ADDED")
     def addtolist(self):
         """ adds file to list """
         filename = filedialog.askopenfilename(initialdir="/", title="Select csv file",
                                               filetypes=(("csv files", "*.csv"),
                                                          ("all files", "*.*")))
         self.addtolistval(filename)
-                                                        
     def concatanation(self):
-        """ concatanation button function """ 
+        """ concatanation button function """
         if self.varnumset.get() == "Horizontal":
             self.concat(axis=1)
         else:
