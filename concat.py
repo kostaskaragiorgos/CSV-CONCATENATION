@@ -67,9 +67,9 @@ class CsvConcatenation():
         self.varnumset.set(setslist[0])
         self.popupsetmenu = OptionMenu(self.master, self.varnumset, *setslist)
         self.popupsetmenu.pack()
-        self.concatanationb = Button(self.master, text="CONCATENATION", state="disable",
-                                     command=self.concatanation)
-        self.concatanationb.pack()
+        self.concatenationb = Button(self.master, text="CONCATENATION", state="disable",
+                                     command=self.concatenation)
+        self.concatenationb.pack()
     def delfirst(self):
         """ deletes the first element of the list """
         if not self.concatlist:
@@ -78,7 +78,7 @@ class CsvConcatenation():
             self.concatlist.pop(0)
             msg.showinfo("Delete", "Success The first element of the list has been deleted ")
         if len(self.concatlist) < 2:
-            self.concatanationb.configure(state="disable")
+            self.concatenationb.configure(state="disable")
     def dellast(self):
         """ deletes last element of the list """
         if not self.concatlist:
@@ -87,7 +87,7 @@ class CsvConcatenation():
             self.concatlist.pop()
             msg.showinfo("Delete", "Success The last element of the list has been deleted ")
         if len(self.concatlist) < 2:
-            self.concatanationb.configure(state="disable")
+            self.concatenationb.configure(state="disable")
     def showlista(self):
         """ shows the list of files """
         if not self.concatlist:
@@ -97,15 +97,15 @@ class CsvConcatenation():
     def clearl(self):
         """ clears the list """
         self.concatlist.clear()
-        self.concatanationb.configure(state="disable")
-        msg.showinfo("LIST CLEARED", "THE CONCATANATION LIST IS CLEAR\n"
+        self.concatenationb.configure(state="disable")
+        msg.showinfo("LIST CLEARED", "THE CONCATENATION LIST IS CLEAR\n"
                      +"YOU CAN CONCATANATE NEW FILES")
     def exitmenu(self):
         """ exit menu function"""
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
     def concat(self, axis):
-        """ concatanation button"""
+        """ concatenation button"""
         concatdf = pd.concat(self.concatlist, axis=axis)
         filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
                                                     filetypes=(("csv files", "*.csv"),
@@ -114,9 +114,9 @@ class CsvConcatenation():
             msg.showinfo("SUCCESS", "THE CSV FILE CREATED SUCCESSFULLY")
             concatdf.to_csv(filenamesave, index=False)
             self.concatlist.clear()
-            self.concatanationb.configure(state="disable")
-            msg.showinfo("LIST CLEARED", "THE CONCATANATION LIST IS CLEAR\n"
-                         +"YOU CAN CONCATANATE NEW FILES")
+            self.concatenationb.configure(state="disable")
+            msg.showinfo("LIST CLEARED", "THE CONCATENATION LIST IS CLEAR\n"
+                         +"YOU CAN CONCATENATE NEW FILES")
         else:
             msg.showerror("ERROR", "NO FILE SAVED")
     def checkcolumns(self, pandascheck):
@@ -134,7 +134,7 @@ class CsvConcatenation():
             msg.showinfo("SUCCESS", "THE CSV FILE "+" ADDED SUCCESSFULLY")
         else:
             self.checkcolumns(pandascheck)
-            self.concatanationb.configure(state="active")
+            self.concatenationb.configure(state="active")
     def addtolistval(self, filename):
         """checks if inserted file is a .csv"""
         if ".csv" in filename:
@@ -149,8 +149,8 @@ class CsvConcatenation():
                                               filetypes=(("csv files", "*.csv"),
                                                          ("all files", "*.*")))
         self.addtolistval(filename)
-    def concatanation(self):
-        """ concatanation button function """
+    def concatenation(self):
+        """ concatenation button function """
         if self.varnumset.get() == "Horizontal":
             self.concat(axis=1)
         else:
@@ -158,7 +158,7 @@ class CsvConcatenation():
     def savefile(self):
         """ saves the new file """
         if len(self.concatlist) >= 2:
-            self.concatanation()
+            self.concatenation()
         else:
             msg.showerror("SAVE ERROR", "INSERT MORE FILES")
 def main():
