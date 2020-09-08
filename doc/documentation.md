@@ -84,3 +84,23 @@ You can clear the concatanation  using menu Edit --> Clear list or using Ctrl+T 
 An informative message pops up
 
 <p><img src ="doc images/edit menu/clear list pop up.png" title="clear list pop up"/> </p>
+
+# About menu
+
+You can show info about the app by using menu About --> About or using Ctrl+i keybind
+
+<p><img src="doc images/about menu/about menu.png" title="about menu"/></p>
+
+An informative message pops up
+
+<p><img src="doc images/about menu/about.png" title="about menu"/></p> 
+
+# Help menu
+
+You can show info about the app by using menu Help --> Help or using Alt+F1 keybind
+
+<p><img src="doc images/help menu/help menu.png" title="help menu"/></p>
+
+An informative message pops up
+
+<p><img src="doc images/help menu/help.png" title="help"/></p> 
