@@ -24,7 +24,7 @@
 
 ## Dependencies
 
-To install the dependencies
+Install the dependencies
 
 <ul>
   <li> pandas (conda install -c anaconda pandas) </li>
