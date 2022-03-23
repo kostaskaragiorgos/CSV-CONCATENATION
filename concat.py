@@ -16,8 +16,10 @@ def helpmenu():
                  "PRESS THE CONCATENATION BUTTON TO SAVE THE NEW CSV FILE")
 class CsvConcatenation():
     """ csv concatenation class"""
+    # pylint: disable=too-many-instance-attributes
     def __init__(self, master):
         self.concatlist = []
+        self.columnsofthefirst = []
         self.master = master
         self.master.title("CSV CONCATENATION")
         self.master.geometry("250x120")
